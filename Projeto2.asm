@@ -1,10 +1,10 @@
 .data
 	msgm1: .asciiz "Qual o tamanho da sua matriz? (2 ou 3): "
 	msgm2: .asciiz "\nTamanho escolhido: "
-	msgval: .asciiz "\nDigite o valor da posiÁ„o "
+	msgval: .asciiz "\nDigite o valor da posi√ß√£o "
 	msgmat: .asciiz "\nA matriz digitada foi:\n"
 	msgInversa: .asciiz "\nA matriz inversa foi:\n"
-	msgErroDet: .asciiz "\n Essa matriz n„o tem uma inversa\n"
+	msgErroDet: .asciiz "\n Essa matriz n√£o tem uma inversa\n"
 	espaco: .asciiz " "
 	quebra: .asciiz "\n"
 	matriz: 
@@ -31,7 +31,7 @@ main:
 	move $a0, $t0
 	syscall
 	
-	# Verifica se È 2 ou 3
+	# Verifica se √© 2 ou 3
 	beq $t0, 2, matriz2x2
 	beq $t0, 3, matriz3x3
 	j fim
@@ -88,7 +88,7 @@ print2x2:
     	addi $t2, $t2, 4   
     	addi $t1, $t1, 4
 
-   	rem $t3, $t2, 8 		# resto da divis„o em $t3
+   	rem $t3, $t2, 8 		# resto da divis√£o em $t3
     	bne $t3, $zero, continuar2x2	# pula linha
 
     	li $v0, 4
@@ -231,7 +231,7 @@ print3x3:
     	addi $t2, $t2, 4   
     	addi $t1, $t1, 4
 
-   	rem $t3, $t2, 12		# resto da divis„o em $t3
+   	rem $t3, $t2, 12		# resto da divis√£o em $t3
     	bne $t3, $zero, continuar3x3	# pula linha
     	
     	li $v0, 4
@@ -328,7 +328,7 @@ calcInversa3x3:
     	
     	mul.s $f12, $f2, $f6
     	mul.s $f13, $f3, $f5
-    	sub.s $f13, $f13, $f12
+    	sub.s $f13, $f12, $f13
     	
     	mul.s $f14, $f6, $f7
     	mul.s $f15, $f4, $f9
